@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "ripples-in-motion-activities-tracker-application",
+    "public": "dist/ripples-in-motion-activity-tracker",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

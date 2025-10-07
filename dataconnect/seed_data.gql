@@ -1,0 +1,26 @@
+mutation PopulateDatabase @auth(level: USER) {
+  user_insertMany(data: [
+    {
+      username: "testuser1",
+      firstName: "Test",
+      lastName: "User1",
+      email: "test1@example.com"
+    },
+    {
+      username: "testuser2",
+      firstName: "Test",
+      lastName: "User2",
+      email: "test2@example.com"
+    }
+  ])
+  activityType_insertMany(data: [
+    {
+      name: "Running",
+      description: "Outdoor running activity"
+    },
+    {
+      name: "Weightlifting",
+      description: "Strength training with weights"
+    }
+  ])
+}

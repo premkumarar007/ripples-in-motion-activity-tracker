@@ -1,0 +1,44 @@
+mutation CreateActivityLog @auth(level: USER) {
+  activityLog_insert(data: {
+    activityDate: "2024-01-01",
+    durationMinutes: 60,
+    activityTypeId: "00000000-0000-0000-0000-000000000001",
+    userId: "00000000-0000-0000-0000-000000000002"
+  })
+}
+
+query ListActivityTypes @auth(level: PUBLIC) {
+  activityTypes {
+    id
+    name
+    description
+  }
+}
+
+mutation UpdateUser @auth(level: USER) {
+  user_update(
+    id: "00000000-0000-0000-0000-000000000002",
+    data: {
+      firstName: "Bob",
+      lastName: "User"
+    }
+  ) {
+    id
+  }
+}
+
+query GetActivityLog @auth(level: USER) {
+  activityLog(id: "00000000-0000-0000-0000-000000000003") {
+    id
+    activityDate
+    durationMinutes
+    activityType {
+      id
+      name
+    }
+    user {
+      id
+      username
+    }
+  }
+}

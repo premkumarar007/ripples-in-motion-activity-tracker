@@ -1,0 +1,25 @@
+type User @table {
+  username: String!
+  createdAt: Timestamp!
+  email: String
+  firstName: String
+  lastName: String
+}
+
+type ActivityType @table {
+  name: String!
+  createdAt: Timestamp!
+  description: String
+}
+
+type ActivityLog @table {
+  activityDate: Date!
+  durationMinutes: Int!
+  createdAt: Timestamp!
+  user: User
+  activityType: ActivityType
+  distanceKm: Float
+  caloriesBurned: Int
+  notes: String
+  weightLiftedKg: Float
+}
